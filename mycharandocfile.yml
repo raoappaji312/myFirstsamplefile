@@ -2,7 +2,12 @@
 - hosts: all
   become: yes
   tasks:
-  - name: i want to install apache2 web sarver
+  - name: i want to install apache2 web sarver on anisble nodes
     apt:
       name: apache2
       state: present
+        
+  - name: i want to start webserver
+    service : 
+         name: apache2
+         state: started 
